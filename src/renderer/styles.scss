@@ -12,11 +12,16 @@ body {
 .title-bar {
   -webkit-app-region: drag;
   margin: 0;
-
-  background-color: #4D394B;
+  background-color: #493D55;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  overflow-x: hidden;
+}
 
+.social-btns-container {
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 .menu-button-container {
@@ -113,17 +118,17 @@ body {
 }
 
 .fieldsetContainer {
-    height: 0;
-    overflow: hidden;
-    transition: height 400ms linear;
+  height: 0;
+  overflow: hidden;
+  transition: height 400ms linear;
 }
 
 #toggle {
-    display: none;
+  display: none;
 }
 
 #toggle:checked ~ .fieldsetContainer {
-    height: 50px;
+  height: 50px;
 }
 
 label .arrow-dn { display: inline-block; }
@@ -135,7 +140,7 @@ label .arrow-up { display: none; }
 
 /********/
 #commits {
-    display: none;
+  display: none;
 }
 
 #commits:checked ~ .fieldsetContainer {
@@ -145,6 +150,8 @@ label .arrow-up { display: none; }
 
 .expand {
   display: flex;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+
 }
 
 
@@ -171,7 +178,7 @@ label .arrow-up { display: none; }
 }
 
 .about-header {
-  width: 60px;
+  width: 72px;
   background: #584B4F;
 }
 
@@ -183,12 +190,165 @@ label .arrow-up { display: none; }
 }
 
 .about-content {
+  height: 88%;
   background: #FFF;
-  width: 80%;
-  z-index: 11;
-  display: inline-block;
-  height: 100vh;
-  margin-left: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 1%;
+}
+
+.card {
+  background: #FFF;
+  height: 100%;
+  display: flex;
+}
+
+table {
+  font-size: 16px;
+  /*margin-top: 20px;*/
+  font-weight: 500;
+  line-height: 1.1;
+    border-collapse: collapse;
+  width: 100%;
+}
+
+.td-status {
+  font-size: 14px;
+  width: 20%;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #F8F9FA;
+}
+
+tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.card-space {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.card-space-table-th {
+padding-top: 10px;
+padding-bottom: 0px;
+overflow: hidden;
+/* height: 100%; */
+width: 100%;
+}
+
+.card-space-table {
+  overflow: auto;
+  height: 50%;
+}
+
+.card-space-inputs {
+  height: 50%;
+  background: #F8F9FA;
+  border-right: 1px solid #ddd;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.card-space .card-space-table::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+}
+.card-space .card-space-table::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+.card-space .card-space-table::-webkit-scrollbar-thumb {
+  background: #f1f1f1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.card-space .card-space-table::-webkit-scrollbar-thumb:hover {
+  opacity: 0.4;
+}
+.card-space .card-space-table::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+.card-space .card-space-table::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.card-space .card-space-table::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+.card-space .card-space-table::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+.card-space .card-space-table::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.main-content-container {
+  display: block;
+  height: 100%;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 20px;
+  /* padding: 6px 12px; */
+  /* opacity: 0.4; */
+  font-size: 12px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  outline-color: transparent;
+  outline-style: none;
+  margin-bottom: 10px;
+}
+
+.form-control.button{
+  width: 100%;
+  height: 10%;
+  cursor: pointer;
+}
+
+.form-control.description {
+      height: 25%;
+}
+
+.secondary-container {
+
+    height: 100%;
+}
+
+.principal-container {
+
+}
+
+.branch {
+  font-size: 16px;
+  /*margin-top: 20px;*/
+  font-weight: 500;
+  line-height: 1.1;
+
+}
+
+.path {
+  color: #979797;
 }
 
 .side-menu {
@@ -212,7 +372,7 @@ label .arrow-up { display: none; }
 
 
 /* ©2015 Johannes Jakob
-   Made with <3 in Germany */
+Made with <3 in Germany */
 
 body {
   background: #ecf0f1;
@@ -363,4 +523,240 @@ span {
 
 h3 {
   margin-top: 0px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 70px;
+  margin: 0px 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28%;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+  opacity: 0.99;
+  margin-top: 10px;
+}
+
+.btn-add {
+  display: inline-block;
+  background-color: #584B4F;
+  width: 60px;
+  height: 60px;
+  line-height: 90px;
+  margin: 0px 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28%;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+  opacity: 0.99;
+  margin-top: 15px;
+}
+
+.label-header-btn {
+  color: #fff;
+  line-height: 26px;
+  cursor: pointer;
+  padding-left: 5px;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+}
+
+.fa-add {
+  color: #EED9B7;
+}
+
+.label-header-btn-add {
+  color: #fff;
+  height: 26px;
+  line-height: 26px;
+  cursor: pointer;
+  padding-left: 5px;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+}
+
+.social-btns .btn .fa {
+  font-size: 38px;
+  vertical-align: middle;
+  display: contents;
+}
+
+
+.social-btns .btn:before {
+  content: '';
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.social-btns {
+  height: 90px;
+  margin: auto;
+  font-size: 0;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.social-btns .plus {
+  background: #79C7D2;
+  color: #FFF;
+}
+
+/***************************/
+
+
+
+.search {
+  position: relative;
+  background-color: #4C9689;
+  padding: 9px 5px 0px 5px;
+
+
+
+
+}
+
+.search .underline-input {
+  color: rgba(255,255,255,.7);
+  border-color: rgba(255,255,255,.25);
+  font-family: "Ubuntu Mono",sans-serif;
+  font-size: 16px;
+}
+
+.underline-input {
+  background: 0 0;
+  border: 0;
+  border-bottom: 1px solid;
+  border-radius: 0;
+  -webkit-appearance: none!important;
+  vertical-align: middle;
+  padding-left: 0;
+  border-color: #dbe0e2;
+  width: 100%;
+
+  border-radius: 60px;
+  border-color: transparent;
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  opacity: 0.4;
+
+  background-color: #fff;
+
+  outline-color: transparent;
+  outline-style: none;
+
+  color: #584B4F;
+
+  text-align: center;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.4;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+.social-btns-container {
+  overflow: auto;
+  overflow-x: hidden;
+  height: 100%;
+  display: block;
+}
+
+.span-gree-dark {
+  background: #1b735f;
+}
+
+.span-green-light {
+  background: #1e816b;
+}
+
+.main-content {
+  overflow: hidden;
+    width: 100%;
+}
+
+.local-files {
+  width: 30%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.diff-files {
+  width: 70%;
+}
+
+.card-radius {
+  border-radius: 5px;
+}
+
+.d2h-diff-table {
+  font-size: 12px;
+}
+
+.d2h-diff-tbody > tr > td {
+    height: 0px;
+    line-height: 0px;
+}
+
+.d2h-wrapper {
+      padding-right: 5%;
+      padding-bottom: 1%;
+}
+
+.diff-files .card-space {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.d2h-diff-tbody > tr > td {
+  position: inherit;
+}
+
+.diff-files-container {
+  overflow: auto;
 }
