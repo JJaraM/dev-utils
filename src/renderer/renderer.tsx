@@ -23,7 +23,7 @@ shelljs.config.execPath = nodePath;
 const dir = "/Users/jonathan/Desktop/Development/electron";
 const user = "git config user.name";
 const gitStatus = "git diff --name-status";
-const gitDiff = "git diff ";
+const gitDiff = "git diff";
 
 // const repositoryUser = shelljs.exec('cd ' + dir + " && " + user);
 // console.log(repositoryUser);
@@ -109,12 +109,12 @@ ReactDOM.render(
                 <div className="card-space diff-files-container">
                   {fileStatus.map(function(object, i) {
                     const t = object.split("	");
+                    if (t[0] === '') {
+                      return (<div></div>)
+                    }
                     const repositoryDiff = shelljs.exec('cd ' + dir + " && " + gitDiff + " " + t[1]);
-                    console.log(repositoryDiff);
-
-
                     return (
-                      <ReactGhLikeDiff diffString={txt} />
+                      <ReactGhLikeDiff diffString={repositoryDiff} />
                     );
                   })}
                 </div>
