@@ -156,6 +156,7 @@ label .arrow-up { display: none; }
 
 
 
+
 .changeArrow {
   background: #584B4F;
   font-size: 9pt;
@@ -203,32 +204,48 @@ label .arrow-up { display: none; }
   display: flex;
 }
 
-table {
-  font-size: 16px;
-  /*margin-top: 20px;*/
-  font-weight: 500;
-  line-height: 1.1;
-    border-collapse: collapse;
-  width: 100%;
-}
+
+
 
 .td-status {
   font-size: 14px;
   width: 20%;
 }
 
-td, th {
-    text-align: left;
-    padding: 8px;
+
+
+.card-space-table tr:hover {
+  background: #4C9689;
+  color:#FFFFFF;
 }
 
-tr:nth-child(even) {
-    background-color: #F8F9FA;
+.tr-selection {
+  background: #4C9689;
+  background-color: #4C9689 !important;
+  color:#FFFFFF;
 }
 
-tr {
-    border-bottom: 1px solid #ddd;
+.line-num2 {
+  visibility: visible;
 }
+.td-selector {
+  cursor: pointer;
+}
+.no-diff {
+
+    background: #F8F9FA;
+    width: 100%;
+
+    padding-top: 30%;
+    padding-left: 30%;
+    font-size: 18px;
+    color: #000;
+}
+
+textarea {
+  resize: none;
+}
+
 
 .card-space {
   padding-left: 10px;
@@ -241,11 +258,11 @@ tr {
 }
 
 .card-space-table-th {
-padding-top: 10px;
-padding-bottom: 0px;
-overflow: hidden;
-/* height: 100%; */
-width: 100%;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  /* height: 100%; */
+  width: 100%;
 }
 
 .card-space-table {
@@ -262,6 +279,49 @@ width: 100%;
 }
 
 
+// .d2h-file-side-diff
+.diff-files-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.diff-files-container::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+/*scoll bar on hover*/
+.diff-files-container::-webkit-scrollbar-thumb {
+  background: #CCC;
+  border: 0px none #CCC;
+
+}
+.diff-files-container::-webkit-scrollbar-thumb:hover {
+  opacity: 0.4;
+}
+
+/*scroll bar selector*/
+.diff-files-container::-webkit-scrollbar-thumb:active {
+  background: #CCC;
+}
+
+/*Bar background*/
+.diff-files-container::-webkit-scrollbar-track {
+  background: #efefef;
+  border: 0px none #efefef;
+
+}
+.diff-files-container::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+.diff-files-container::-webkit-scrollbar-track:active {
+  background: #efefef;
+}
+.diff-files-container::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+////
 .card-space .card-space-table::-webkit-scrollbar {
   width: 4px;
   height: 2px;
@@ -320,6 +380,31 @@ width: 100%;
   margin-bottom: 10px;
 }
 
+.d2h-file-list-wrapper {
+    width: 70%;
+}
+
+.local-files table {
+  font-size: 16px;
+  /*margin-top: 20px;*/
+  font-weight: 500;
+  line-height: 1.1;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.local-files td, .local-files th {
+  text-align: left;
+  padding: 8px;
+}
+
+.local-files > tr:nth-child(even) {
+  background-color: #F8F9FA;
+}
+.local-files tr {
+  border-bottom: 1px solid #ddd;
+}
+
 .form-control.button{
   width: 100%;
   height: 10%;
@@ -327,12 +412,12 @@ width: 100%;
 }
 
 .form-control.description {
-      height: 25%;
+  height: 25%;
 }
 
 .secondary-container {
 
-    height: 100%;
+  height: 100%;
 }
 
 .principal-container {
@@ -664,7 +749,10 @@ h3 {
 }
 
 
-
+.d2h-file-list-wrapper {
+  min-width: 460px;
+max-width: 460px;
+}
 ::-webkit-scrollbar {
   width: 4px;
   height: 2px;
@@ -699,7 +787,6 @@ h3 {
   background: transparent;
 }
 
-
 .social-btns-container {
   overflow: auto;
   overflow-x: hidden;
@@ -717,7 +804,7 @@ h3 {
 
 .main-content {
   overflow: hidden;
-    width: 100%;
+  width: 100%;
 }
 
 .local-files {
@@ -728,7 +815,15 @@ h3 {
 
 .diff-files {
   width: 70%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  padding-right: 2%;
 }
+
+/*.d2h-file-header {
+  display: none;
+}*/
 
 .card-radius {
   border-radius: 5px;
@@ -738,25 +833,39 @@ h3 {
   font-size: 12px;
 }
 
-.d2h-diff-tbody > tr > td {
-    height: 0px;
-    line-height: 0px;
-}
 
-.d2h-wrapper {
-      padding-right: 5%;
-      padding-bottom: 1%;
-}
 
 .diff-files .card-space {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-}
+  padding-top: 10px;
+  padding-bottom: 10px;
 
+  background: red;
+
+}
+.diff-files-reposition-full-size {
+  // width: 100%;
+  // height: 100%;
+}
 .d2h-diff-tbody > tr > td {
   position: inherit;
 }
 
 .diff-files-container {
   overflow: auto;
+  height: 90%;
+}
+
+.diff-files-reposition {
+  display: grid;
+  width: 100%;
+
+
+}
+
+.d2h-code-line-ctn span {
+  line-height: 0px !important;
+}
+
+.d2h-code-line {
+  margin-left: 0px;
 }
