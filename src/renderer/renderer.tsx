@@ -12,7 +12,7 @@ import { ReactGhLikeDiff } from 'react-gh-like-diff';
 
 const shelljs = require('shelljs-exec-proxy');
 
-// Import the styles here to process them with webpack
+
 import './styles.scss';
 
 const nodePath = (shelljs.which('node').toString());
