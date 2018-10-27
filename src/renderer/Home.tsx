@@ -18,7 +18,7 @@ import { Files } from './Files';
 
 const shelljs = require('shelljs-exec-proxy');
 
-import './styles.scss';
+
 
 const nodePath = (shelljs.which('node').toString());
 shelljs.config.execPath = nodePath;
@@ -72,7 +72,6 @@ export class Home extends React.Component<any, any> {
       if (this.state.fileSelection !== null) {
         const prevTrSelection = document.getElementById(this.state.fileSelection);
         if (prevTrSelection !== null) {
-          console.log('prev' + prevTrSelection);
           prevTrSelection.classList.remove(className);
         }
       }
@@ -80,7 +79,6 @@ export class Home extends React.Component<any, any> {
       const currentTrSelection = document.getElementById(trId);
 
       if (currentTrSelection !== null) {
-        console.log(currentTrSelection);
         currentTrSelection.classList.add(className);
       }
 
@@ -108,24 +106,48 @@ export class Home extends React.Component<any, any> {
 
                 <div className="local-files">
 
-                  <div className="card-space-table-th">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th className="td-status">Status</th>
-                          <th>Path</th>
-                        </tr>
-                      </thead>
-                    </table>
-                  </div>
+                  {
+                    (() => {
 
-                  <div className="card-space-table">
-                    <table>
-                      <tbody>
-                        <Files files={fileStatus} event={functionClick}/>
-                      </tbody>
-                    </table>
-                  </div>
+                      if (fileStatus.length === 1) {
+                        return (
+
+                          <div className="no-outfile-container out-files ">
+                            <div className="no-outfile">
+                              There are not changes
+                            </div>
+                          </div>
+
+                        );
+                      }
+
+
+                      return (
+                        <div className="file-container">
+                          <div className="card-space-table-th">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th className="td-status">Status</th>
+                                  <th>Path</th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </div>
+
+                          <div className="card-space-table">
+                            <table>
+                              <tbody>
+                                <Files files={fileStatus} event={functionClick} />
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      );
+                    })()
+                  }
+
+
 
                   <div className="card-space-inputs">
                     <input className="form-control " placeholder="Summary"/>
@@ -138,7 +160,7 @@ export class Home extends React.Component<any, any> {
                   (() => {
                     if (this.state.showComponent) {
                       return (
-                        <DiffFiles file={this.state.fileName}/>
+                        <DiffFiles file={this.state.fileName} comment={false}/>
                       );
                     }
                     return (<div className="no-diff">No diffs</div>);
@@ -151,7 +173,7 @@ export class Home extends React.Component<any, any> {
             </div>
           </div>
         </div>
-    </div>
+      </div>
     );
   }
 

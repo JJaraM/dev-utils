@@ -1,3 +1,8 @@
+/*
+* Copyright (c) Jonathan Jara Morales
+* @since 1.0
+*/
+
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ReactGhLikeDiff } from 'react-gh-like-diff';
@@ -6,6 +11,7 @@ import 'react-gh-like-diff/lib/diff2html.min.css';
 
 interface Props {
   file: string;
+  comment: boolean;
 }
 
 const shelljs = require('shelljs-exec-proxy');
@@ -25,19 +31,54 @@ export class File extends React.Component<Props, any>  {
   }
 
   componentWillUnmount() {
-      document.removeEventListener('click', this.handleClickOutside, true);
+    document.removeEventListener('click', this.handleClickOutside, true);
   }
 
 
   handleClickOutside = (event) => {
+    console.log(this.props.comment);
+    if (this.props.comment) {
+      const component = event.path[0];
+      const clazz = component.getAttribute('class');
 
-    const domNode = ReactDOM.findDOMNode(this);
+      if (clazz === 'line-num1' || clazz === 'line-num2') {
+        const trNode = event.path[2];
 
-    if (!domNode || !domNode.contains(event.target)) {
+        const tdNodes = trNode.getElementsByTagName('td');
+        const tdNode = tdNodes[1];
+
+
+        const divNode = document.createElement("div");
+        divNode.classList.add('code-review-div');
+
+
+        const textnode = document.createElement("textarea");
+        textnode.classList.add('code-review-comment');
+        divNode.appendChild(textnode);
+
+        const buttonNode = document.createElement("button");
+        buttonNode.setAttribute('content', 'comment');
+        buttonNode.innerHTML = 'comment';
+        buttonNode.classList.add('form-control');
+        buttonNode.classList.add('code-review-button');
+        divNode.appendChild(buttonNode);
+
+
+        tdNode.appendChild(divNode);
+
+
+
+      }
+
+      const domNode = ReactDOM.findDOMNode(this);
+
+      if (!domNode || !domNode.contains(event.target)) {
         this.setState({
-            visible : false
+          visible : false
         });
+      }
     }
+
   }
 
   render() {

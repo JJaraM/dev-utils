@@ -1,32 +1,41 @@
+/*
+* Copyright (c) Jonathan Jara Morales
+* @since 1.0
+*/
 import * as React from 'react';
 
-export class ProjectsMenu extends React.Component<any, any>  {
+import { NavLink, Link } from "react-router-dom";
 
-  constructor(props:any) {
-    super(props);
-  }
+const projects = [
+  {id: 1, path: "/Users/jonathan/Desktop/Development/electron"},
+  {id: 2, path: "/Users/jonathan/Desktop/Development/blog/blog-microservice-post"},
+  {id: 3, path: "/Users/jonathan/Desktop/Development/blog/blog.cloud"},
+  {id: 4, path: "/Users/jonathan/Desktop/Development/blog/react-app"}
+];
 
-  render() {
-    return (
-      <div className="social-btns-container">
-        <div className="social-btns">
-          <div>
-            <a className="btn plus" href="#"><i className="fa fa-plus"></i></a>
-          </div>
-          <div>
-            <a className="btn plus" href="#"><i className="fa fa-plus"></i></a>
-          </div>
-          <div>
-            <a className="btn plus" href="#"><i className="fa fa-plus"></i></a>
-          </div>
-          <div>
-            <a className="btn plus" href="#"><i className="fa fa-plus"></i></a>
-          </div>
-          <div>
-            <a className="btn plus" href="#"><i className="fa fa-plus"></i></a>
-          </div>
+
+
+export const ProjectsMenu: React.StatelessComponent<{}> = (props) => {
+
+  return (
+    <div className="social-btns-container projects">
+      <div className="social-btns">
+        <div className="social-projects">
+          {
+            projects.map((project, i) => {
+              return (
+                <div id={'project-id-' + project.id} key={'project-key-' + project.id}
+                  project-path={project.path}>
+                  <NavLink className="btn plus" to={`/projectMenu/${project.id}`}>
+                    <i className="fa fa-plus"></i>
+                  </NavLink>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+
 }

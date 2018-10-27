@@ -1,9 +1,14 @@
+/*
+ * Copyright (c) Jonathan Jara Morales
+ * @since 1.0
+ */
 import * as React from 'react';
 
 import { File } from './File';
 
 interface Props {
   file: string;
+  comment: boolean;
 }
 
 export class DiffFiles extends React.Component<Props, any>  {
@@ -18,7 +23,7 @@ export class DiffFiles extends React.Component<Props, any>  {
         <div className="diff-files-container">
           <div className="diff-files-reposition">
             <div className="diff-files-reposition-full-size">
-                <File file={this.props.file}/>
+                <File file={this.props.file} comment={this.props.comment}/>
             </div>
           </div>
         </div>

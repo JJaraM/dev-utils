@@ -1,12 +1,19 @@
+/*
+ * Copyright (c) Jonathan Jara Morales
+ * @since 1.0
+ */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { BrowserRouter as Router } from "react-router-dom";
-import { AppRouter } from './AppRouter';
-import {remote, ipcRenderer} from 'electron';
-
 import { SideMenu } from './SideMenu';
 import {ProjectsSubMenu} from './ProjectsSubMenu';
+import {remote, ipcRenderer} from 'electron';
+import { AppRouter } from './AppRouter';
+
+
+
+
 
 ReactDOM.render(
   <Router>
@@ -18,6 +25,8 @@ ReactDOM.render(
   </Router>,
   document.getElementById('app')
 );
+
+
 
 document.getElementById('menu-button').addEventListener('click', (event) => {
   ipcRenderer.send('display-app-menu', {

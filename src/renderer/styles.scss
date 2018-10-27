@@ -26,7 +26,6 @@ body {
 
 .menu-button-container {
   background-color: white;
-  border: 0.5px red solid;
   display: flex;
   align-items: center;
   flex-grow: 1;
@@ -34,7 +33,6 @@ body {
 
 .app-name-container {
   background-color: white;
-  border: 0.5px red solid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -623,7 +621,7 @@ h3 {
   border-radius: 28%;
   box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
   opacity: 0.99;
-  margin-top: 10px;
+  margin-top: 19px;
 }
 
 .btn-add {
@@ -684,7 +682,7 @@ h3 {
 }
 
 .social-btns {
-  height: 90px;
+  height: 100%;
   margin: auto;
   font-size: 0;
   text-align: center;
@@ -839,7 +837,6 @@ max-width: 460px;
   padding-top: 10px;
   padding-bottom: 10px;
 
-  background: red;
 
 }
 .diff-files-reposition-full-size {
@@ -868,4 +865,110 @@ max-width: 460px;
 
 .d2h-code-line {
   margin-left: 0px;
+}
+
+.out-files {
+    width: 100%;
+    text-align: center;
+}
+
+.no-outfile-container {
+
+
+
+  /* Firefox */
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+
+  /* Safari and Chrome */
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+
+  /* W3C */
+  display: box;
+  box-pack: center;
+  box-align: center;
+
+  height: 50%;
+}
+
+.no-outfile {
+  display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+}
+
+.file-container {
+  display: inline;
+}
+
+.code-review-div {
+  background: #F8F9FA;
+    border-radius: 0px;
+    border-color: 1px solid #ddd;
+    border: 1px solid #ddd;
+    padding-top: 0px;
+    padding-left: 15px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    width: 625px;
+    margin-left: 10px;
+}
+
+.code-review-button {
+
+  width: 100px !important;
+  height: 35px;
+}
+
+.code-review-comment {
+  width: 600px;
+    height: 100px;
+
+    font-size: 12px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    outline-color: transparent;
+    outline-style: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.social-btns-container.projects {
+  height: 82%;
+  display: block;
+}
+.settings {
+  background: transparent;
+}
+
+.settings a {
+  margin-top: 9px;
+}
+
+.social-projects {
+
+}
+
+.social-projects-cleaner {
+  height: 62px;
+  /* padding-top: 53px; */
+
+}
+
+.logo {
+  color: #FFF;
+    font-size: 12px;
+    text-align: center;
+    height: 100%;
+    padding-top: 6px;
 }

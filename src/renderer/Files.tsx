@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) Jonathan Jara Morales
+ * @since 1.0
+ */
+
 import * as React from 'react';
 
 import { File } from './File';
@@ -12,10 +17,7 @@ export class Files extends React.Component<Props, any>  {
   constructor(props:Props) {
     super(props);
   }
-
-
-
-
+  
   render() {
     const functionClick = this.props.event;
 

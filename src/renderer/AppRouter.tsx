@@ -8,6 +8,10 @@ import { HashRouter, Route, Switch} from "react-router-dom";
 
 import { Home } from './Home';
 import { DiffFiles } from './DiffFiles';
+import {ProjectsSubMenu} from './ProjectsSubMenu';
+
+import './styles.scss';
+
 /*
 * Component used to redirect the request to the correspond component.
 * @since 1.0
