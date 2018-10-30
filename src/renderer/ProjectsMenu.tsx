@@ -4,7 +4,7 @@
 */
 import * as React from 'react';
 
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const projects = [
   {id: 1, path: "/Users/jonathan/Desktop/Development/electron"},
@@ -26,9 +26,9 @@ export const ProjectsMenu: React.StatelessComponent<{}> = (props) => {
               return (
                 <div id={'project-id-' + project.id} key={'project-key-' + project.id}
                   project-path={project.path}>
-                  <NavLink className="btn plus" to={`/projectMenu/${project.id}`}>
+                  <Link className="btn plus" to={`/projectMenu/${project.id}`}>
                     <i className="fa fa-plus"></i>
-                  </NavLink>
+                  </Link>
                 </div>
               )
             })

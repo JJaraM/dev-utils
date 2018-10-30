@@ -1,0 +1,55 @@
+@import "variables";
+
+.card-space-table tr:hover {
+  background: $secondary-color;
+  color:#FFFFFF;
+}
+
+table.files-table-body, table.files-table-header {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.files-table-body td, table.files-table-body th, table.files-table-header td, table.files-table-header th {
+  text-align: left;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #F8F9FA;
+}
+
+table.files-table-body tr, table.files-table-header tr {
+  border-bottom: 1px solid #ddd;
+}
+
+table.files-table-header th, table.files-table-body tr {
+  font-size: 14px;
+  text-align: left;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+table.files-table-header th:first-child, table.files-table-body td:first-child  {
+  width: 10%;
+}
+
+table.files-table-header th:nth-child(2) {
+  width: 20%;
+}
+
+table.files-table-header th:nth-child(3), table.files-table-body td:nth-child(3)  {
+  width: 70%;
+}
+
+table.files-table-body td {
+  cursor: pointer;
+}
+
+table.files-table-body td:nth-child(2) {
+  text-align: center;
+}

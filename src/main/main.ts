@@ -7,8 +7,8 @@ let mainWindow: Electron.BrowserWindow;
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        height: 520,
-        width: 900,
+        height: 660,
+        width: 1230,
         frame: false,
         minHeight: 660,
         minWidth: 1230

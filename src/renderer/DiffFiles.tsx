@@ -21,11 +21,7 @@ export class DiffFiles extends React.Component<Props, any>  {
     return (
       <div className="diff-files">
         <div className="diff-files-container">
-          <div className="diff-files-reposition">
-            <div className="diff-files-reposition-full-size">
-                <File file={this.props.file} comment={this.props.comment}/>
-            </div>
-          </div>
+          <File file={this.props.file} comment={true}/>
         </div>
       </div>
     );

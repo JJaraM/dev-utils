@@ -13,58 +13,57 @@ import { HeaderProject } from './HeaderProject';
 import { DiffFiles } from './DiffFiles';
 import { Files } from './Files';
 
-
-
-
 const shelljs = require('shelljs-exec-proxy');
 
-
-
-const nodePath = (shelljs.which('node').toString());
-shelljs.config.execPath = nodePath;
-
-
-
-const dir = "/Users/jonathan/Desktop/Development/electron";
-const user = "git config user.name";
-const gitStatus = "git diff --name-status";
-const gitDiff = "git diff";
-
-// const repositoryUser = shelljs.exec('cd ' + dir + " && " + user);
-// console.log(repositoryUser);
-
-const repositoryStatus = shelljs.exec('cd ' + dir + " && " + gitStatus);
-const fileStatus = repositoryStatus.split(/\n/);
-
-
-
-// const b = shelljs.exec('cd /Users/jonathan/Desktop/Development/blog/react-app && pwd && git status');
-// console.log(b);
-
-
-//const txt = "@@ -49,4 +49,4 @@\r\n     \"react-localize-redux\": \"^3.4.1\",\r\n     \"typescript\": \"^3.1.1\"\r\n   }\r\n-}\r\n+}a"
-const txt = "diff --git a/package.json b/package.json\r\nindex 2c6a000..14ad92d 100644\r\n--- a/package.json\r\n+++ b/package.json\r\n@@ -49,4 +49,4 @@\r\n     \"react-localize-redux\": \"^3.4.1\",\r\n     \"typescript\": \"^3.1.1\"\r\n   }\r\n-}\r\n+}a";
 
 /*
 * Component used to render the index page
 * @since 1.0
 */
-export class Home extends React.Component<any, any> {
+export class CurrentChanges extends React.Component<any, any> {
 
   constructor(props:any) {
     super(props);
     this.state = {
       showComponent: false,
-      fileSelection: null
+      fileSelection: null,
+      fileStatus: []
     };
+
+    setTimeout(() => {
+      this.componentDidMount();
+      this.render();
+    }, 100);
   }
 
+  componentDidMount() {
+    const projects = JSON.parse(localStorage.getItem('projects'));
+    const project = projects.find(item => item.id === Number(this.props.match.params.id))
+
+    const nodePath = (shelljs.which('node').toString());
+    shelljs.config.execPath = nodePath;
+
+
+    const user = "git config user.name";
+    const gitStatus = "git status --porcelain";
+
+    const gitDiff = "git diff";
+    const command = 'cd ' + project.path + " && " + gitStatus;
+
+
+    const repositoryStatus = shelljs.exec(command);
+
+
+
+    const fileStatus = repositoryStatus.split(/\n/);
+
+    this.setState({fileStatus: fileStatus});
+  }
 
   onButtonClick = (event) => {
     const className = 'tr-selection';
-
-
     const div = document.getElementById(event.target.id);
+
     if (div !== null) {
       const fileName = div.getAttribute('file-name');
       const trId = 'file-tr-' + fileName;
@@ -77,28 +76,25 @@ export class Home extends React.Component<any, any> {
       }
 
       const currentTrSelection = document.getElementById(trId);
-
       if (currentTrSelection !== null) {
         currentTrSelection.classList.add(className);
       }
-
-
-      this.setState({
-        showComponent: true,
-        fileName: fileName,
-        fileSelection: trId
-      });
+      this.setState({ showComponent: true, fileName: fileName, fileSelection: trId });
     }
   }
 
 
   render() {
+    //const id = this.props.match.params.id;
+
+
+
     const functionClick = this.onButtonClick;
     return (
       <div className="main-content">
 
         <div className="main-content-container">
-          <HeaderProject />
+          <HeaderProject id={this.props.match.params.id} />
 
           <div className="card-container secondary-container">
             <div className="card-space">
@@ -109,7 +105,7 @@ export class Home extends React.Component<any, any> {
                   {
                     (() => {
 
-                      if (fileStatus.length === 1) {
+                      if (this.state.fileStatus.length === 1) {
                         return (
 
                           <div className="no-outfile-container out-files ">
@@ -124,23 +120,28 @@ export class Home extends React.Component<any, any> {
 
                       return (
                         <div className="file-container">
-                          <div className="card-space-table-th">
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th className="td-status">Status</th>
-                                  <th>Path</th>
-                                </tr>
-                              </thead>
-                            </table>
-                          </div>
+                          <div className="file-container-table">
+                            <div className="card-space-table-th">
+                              <table className="files-table-header">
+                                <thead>
+                                  <tr>
+                                    <th>
+                                      <input type="checkbox" />
+                                    </th>
+                                    <th>Status</th>
+                                    <th>Path</th>
+                                  </tr>
+                                </thead>
+                              </table>
+                            </div>
 
-                          <div className="card-space-table">
-                            <table>
-                              <tbody>
-                                <Files files={fileStatus} event={functionClick} />
-                              </tbody>
-                            </table>
+                            <div className="card-space-table">
+                              <table className="files-table-body">
+                                <tbody>
+                                  <Files files={this.state.fileStatus} event={functionClick} />
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
                         </div>
                       );
