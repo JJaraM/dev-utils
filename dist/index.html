@@ -1,14 +1,75 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-</head>
-
-<body>
-    <div id="app" class="app"></div>
-<script type="text/javascript" src="renderer.bundle.js"></script></body>
-
-</html>
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed: Error: ENOENT: no such file or directory, open '/Users/jo  nathan/Desktop/Development/electron/node_modules/lodash/lodash.js':
+  Error: ENOENT: no such file or directory, open '/Users/jonathan/Desktop/Develo  pment/electron/node_modules/lodash/lodash.js'
+  
+  - compiler.js:79 childCompiler.runAsChild
+    [electron]/[html-webpack-plugin]/lib/compiler.js:79:16
+  
+  - Compiler.js:290 compile
+    [electron]/[webpack]/lib/Compiler.js:290:11
+  
+  - Compiler.js:547 hooks.afterCompile.callAsync.err
+    [electron]/[webpack]/lib/Compiler.js:547:14
+  
+  
+  - after-compile.js:13 
+    [electron]/[ts-loader]/dist/after-compile.js:13:13
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [electron]/[tapable]/lib/Hook.js:154:20
+  
+  - Compiler.js:544 compilation.seal.err
+    [electron]/[webpack]/lib/Compiler.js:544:30
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [electron]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1312 hooks.optimizeAssets.callAsync.err
+    [electron]/[webpack]/lib/Compilation.js:1312:35
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [electron]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1303 hooks.optimizeChunkAssets.callAsync.err
+    [electron]/[webpack]/lib/Compilation.js:1303:32
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [electron]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1298 hooks.additionalAssets.callAsync.err
+    [electron]/[webpack]/lib/Compilation.js:1298:36
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [electron]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1294 hooks.optimizeTree.callAsync.err
+    [electron]/[webpack]/lib/Compilation.js:1294:32
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [electron]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1231 Compilation.seal
+    [electron]/[webpack]/lib/Compilation.js:1231:27
+  
+  - Compiler.js:541 hooks.make.callAsync.err
+    [electron]/[webpack]/lib/Compiler.js:541:17
+  
+  
+  - Compilation.js:1082 _addModuleChain
+    [electron]/[webpack]/lib/Compilation.js:1082:12
+  
+  - Compilation.js:998 processModuleDependencies.err
+    [electron]/[webpack]/lib/Compilation.js:998:9
+  
+  - next_tick.js:61 process._tickCallback
+    internal/process/next_tick.js:61:11
+  
+</pre><script type="text/javascript" src="renderer.bundle.js"></script>
