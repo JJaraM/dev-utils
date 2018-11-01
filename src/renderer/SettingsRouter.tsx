@@ -21,12 +21,13 @@ export class SettingsRouter extends React.Component<any, any> {
   }
 
   render() {
+    console.log('SettingsRouter');
     return (
       <div className="about-wrapper">
         <PrimaryMenu/>
-        
+
         <Switch>
-          <Route path="/app/settings" exact component={Settings} />
+          <Route path="/app/settings/" exact component={Settings} />
         </Switch>
       </div>
     );

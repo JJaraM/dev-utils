@@ -20,6 +20,7 @@ export class MainRouter extends React.Component<any, any> {
   }
 
   render() {
+    console.log('MainRouter');
     return (
       <div className="about-wrapper">
         <PrimaryMenu/>

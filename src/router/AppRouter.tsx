@@ -12,13 +12,15 @@ import { SettingsRouter } from '../renderer/SettingsRouter';
 
 import '../renderer/variables.scss';
 import '../renderer/styles.scss';
-
+import '../renderer/window.scss';
 /*
 * Handles all routes for the application
 * @since 1.0
 */
 export const AppRouter: React.StatelessComponent = () => {
+    console.log('AppRouter');
   return (
+
     <HashRouter>
       <Switch>
         <Route path="/" exact component={MainRouter} />

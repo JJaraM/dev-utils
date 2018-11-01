@@ -1,8 +1,10 @@
 import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
+import * as os from 'os';
 
 let mainWindow: Electron.BrowserWindow;
+const displayFrame = os.platform() === 'win32';
 
 function createWindow() {
     // Create the browser window.
@@ -33,7 +35,11 @@ function createWindow() {
         // when you should delete the corresponding element.
         mainWindow = null;
     });
+
+
 }
+
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

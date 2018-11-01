@@ -16,24 +16,15 @@ body {
 
 .project-label {
   font-size: 12px;
-    color: #FFF;
-    text-align: center;
-     word-break: break-all;
+  color: #FFF;
+  text-align: center;
+  word-break: break-all;
 }
 
 .app-container {
   height: 100vh;
+}
 
-}
-.title-bar {
-  -webkit-app-region: drag;
-  margin: 0;
-  background-color: $primary-color;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  overflow-x: hidden;
-}
 
 .social-btns-container {
   overflow: auto;
@@ -55,46 +46,6 @@ body {
   flex-grow: 1;
 }
 
-.window-controls-container {
-  background-color: #4d394b;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-top: 10px;
-  display: flex;
-}
-
-.menu-button {
-  -webkit-app-region: no-drag;
-  background-color: green;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 25px;
-  height: 25px;
-}
-
-.minimize-button {
-  background-color: #ffbd4c;
-}
-
-.close-button {
-  background-color: #ff5c5c;
-}
-
-.min-max-button {
-  background-color: #00ca56;
-}
-
-.menu-buttons {
-  -webkit-app-region: no-drag;
-  border-radius: 50%;
-  font-size: 9pt;
-  line-height: 11px;
-  margin-left: 6px;
-  width: 16px;
-  height: 16px;
-  border: 0;
-}
 
 
 
@@ -181,7 +132,6 @@ label .arrow-up { display: none; }
   border: 1px solid #584B4F;
   border-radius: 50%;
   display: inline-block;
-  /* height: 9px; */
   text-align: center;
   color: #FFF;
 }
@@ -193,7 +143,7 @@ label .arrow-up { display: none; }
 
 .about-header {
   max-width: 70px;
-  background: #584B4F;
+  background: $primary-color;
 }
 
 .project-menu {
@@ -479,84 +429,6 @@ span {
   visibility: visible;
 }
 
-.close {
-  background: #ff5c5c;
-  font-size: 9pt;
-  width: 11px;
-  height: 11px;
-  border: 1px solid #e33e41;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.close:active {
-  background: #c14645;
-  border: 1px solid #b03537;
-}
-
-.close:active .closebutton {
-  color: #4e0002;
-}
-
-.closebutton {
-  color: #820005;
-  visibility: hidden;
-  cursor: default;
-}
-
-.minimize {
-  background: #ffbd4c;
-  font-size: 9pt;
-  line-height: 11px;
-  margin-left: 4px;
-  width: 11px;
-  height: 11px;
-  border: 1px solid #e09e3e;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.minimize:active {
-  background: #c08e38;
-  border: 1px solid #af7c33;
-}
-
-.minimize:active .minimizebutton {
-  color: #5a2607;
-}
-
-.minimizebutton {
-  color: #9a5518;
-  visibility: hidden;
-  cursor: default;
-}
-
-.zoom {
-  background: #00ca56;
-  font-size: 9pt;
-  line-height: 11px;
-  margin-left: 6px;
-  width: 11px;
-  height: 11px;
-  border: 1px solid #14ae46;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.zoom:active {
-  background: #029740;
-  border: 1px solid #128435;
-}
-
-.zoom:active .zoombutton {
-  color: #003107;
-}
-
-.zoombutton {
-  color: #006519;
-  visibility: hidden;
-  cursor: default;
-}
 
 .content {
   padding: 10px;
@@ -744,6 +616,7 @@ h3 {
   overflow-x: hidden;
   height: 100%;
   display: block;
+  -webkit-app-region: drag;
 }
 
 .span-gree-dark {
@@ -763,12 +636,12 @@ h3 {
 
 .diff-files {
   width: 100%;
-padding-top: 1%;
-padding-bottom: 1%;
-padding-left: 1%;
-padding-right: 1%;
-height: 100%;
-display: block;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  height: 100%;
+  display: block;
 }
 
 /*.d2h-file-header {
@@ -804,7 +677,7 @@ display: none;
   // overflow: auto;
   height: 100%;
   width: 98%;
-      max-width: 700px;
+  max-width: 700px;
 }
 
 .diff-files-reposition {
@@ -817,7 +690,7 @@ display: none;
 .d2h-file-diff, .d2h-file-side-diff
 {
   overflow-x: hidden;
-overflow-y: hidden;
+  overflow-y: hidden;
 }
 .diff-files tbody {
 
@@ -902,21 +775,21 @@ overflow-y: hidden;
 
 .code-review-comment {
   display: block;
-width: 95%;
-height: 100px;
-font-size: 12px;
-line-height: 1.428571429;
-color: #555555;
-vertical-align: middle;
-background-color: #ffffff;
-background-image: none;
-border: 1px solid #cccccc;
-border-radius: 4px;
-outline-color: transparent;
-outline-style: none;
-margin-bottom: 10px;
-margin-top: 10px;
-margin-left: 2%;
+  width: 95%;
+  height: 100px;
+  font-size: 12px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  outline-color: transparent;
+  outline-style: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 2%;
 }
 
 .social-btns-container.projects {
@@ -951,4 +824,23 @@ margin-left: 2%;
 
 .d2h-diff-tbody > tr > td:nth-child(2)  {
   width: 100%;
+}
+
+#titlebar #drag-region {
+  display: grid;
+  grid-template-columns: auto 138px;
+}
+#window-title {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  margin-left: 8px;
+  overflow-x: hidden;
+}
+#window-title span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
 }
