@@ -31,7 +31,7 @@ export class HeaderProject extends React.Component<Props, any>  {
 
 
     return (
-      <div className="card-container principal-container">
+      <div className="card-title card-container principal-container">
         <div className="card">
           <div className="card-space">
             <div className="branch">{branch}</div>

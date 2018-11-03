@@ -8,7 +8,7 @@ import { HashRouter, Route, Switch, Redirect} from "react-router-dom";
 import { SecondaryMenu } from './SecondaryMenu';
 import { PrimaryMenu } from './PrimaryMenu';
 import { Settings } from './Settings';
-
+import { SettingsMenu } from './SettingsMenu';
 /*
 * Component used to redirect the request to the correspond component.
 * @since 1.0
@@ -21,13 +21,13 @@ export class SettingsRouter extends React.Component<any, any> {
   }
 
   render() {
-    console.log('SettingsRouter');
+
     return (
       <div className="about-wrapper">
         <PrimaryMenu/>
-
+        <SettingsMenu/>
         <Switch>
-          <Route path="/app/settings/" exact component={Settings} />
+          <Route path="/app/settings/:id" exact component={Settings} />
         </Switch>
       </div>
     );

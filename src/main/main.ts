@@ -9,11 +9,11 @@ const displayFrame = os.platform() === 'win32';
 function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        height: 660,
-        width: 1230,
+        height: 600,
+        width: 1125,
         frame: false,
-        minHeight: 660,
-        minWidth: 1230
+        minHeight: 600,
+        minWidth: 1125
     });
 
     // and load the index.html of the app.

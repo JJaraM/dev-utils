@@ -13,7 +13,6 @@ import { CurrentChanges } from './CurrentChanges';
 * Component used to redirect the request to the correspond component.
 * @since 1.0
 */
-
 export class ProjectRouter extends React.Component<any, any> {
 
   constructor(props:any) {

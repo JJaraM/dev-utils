@@ -13,8 +13,6 @@ const projects = [
   {id: 4, path: "/Users/jonathan/Desktop/Development/blog/react-app"}
 ];
 
-
-
 export const ProjectsMenu: React.StatelessComponent<{}> = (props) => {
 
   return (

@@ -26,11 +26,13 @@ export class SideMenu extends React.Component<any, any>  {
                 <a className="btn plus" href="#"><i className="fa fa-plus"></i></a>
               </div>
             </div>
+            <ProjectsMenu  />
           </div>
-          <ProjectsMenu  />
           <div className="logo">
             {logo}
           </div>
+
+
         </div>
       </div>
 

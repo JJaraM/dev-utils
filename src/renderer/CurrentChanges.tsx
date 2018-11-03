@@ -98,6 +98,7 @@ export class CurrentChanges extends React.Component<any, any> {
 
           <div className="card-container secondary-container">
             <div className="card-space">
+
               <div className="card card-radius">
 
                 <div className="local-files">
@@ -119,28 +120,31 @@ export class CurrentChanges extends React.Component<any, any> {
 
 
                       return (
-                        <div className="file-container">
-                          <div className="file-container-table">
-                            <div className="card-space-table-th">
-                              <table className="files-table-header">
-                                <thead>
-                                  <tr>
-                                    <th>
-                                      <input type="checkbox" />
-                                    </th>
-                                    <th>Status</th>
-                                    <th>Path</th>
-                                  </tr>
-                                </thead>
-                              </table>
-                            </div>
+                        <div className="sub-card-space-inputs">
 
-                            <div className="card-space-table">
-                              <table className="files-table-body">
-                                <tbody>
-                                  <Files files={this.state.fileStatus} event={functionClick} />
-                                </tbody>
-                              </table>
+                          <div className="file-container">
+                            <div className="file-container-table">
+                              <div className="card-space-table-th">
+                                <table className="files-table-header">
+                                  <thead>
+                                    <tr>
+                                      <th>
+                                        <input type="checkbox" />
+                                      </th>
+                                      <th>Status</th>
+                                      <th>Path</th>
+                                    </tr>
+                                  </thead>
+                                </table>
+                              </div>
+
+                              <div className="card-space-table">
+                                <table className="files-table-body">
+                                  <tbody>
+                                    <Files files={this.state.fileStatus} event={functionClick} />
+                                  </tbody>
+                                </table>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -150,10 +154,12 @@ export class CurrentChanges extends React.Component<any, any> {
 
 
 
-                  <div className="card-space-inputs">
-                    <input className="form-control " placeholder="Summary"/>
-                    <textarea className="form-control description" placeholder="Description"/>
-                    <button className="form-control button">Commit</button>
+                  <div className="sub-card-space-inputs card-space-inputs">
+                    <div className="card-commit-inputs">
+                      <input className="form-control " placeholder="Summary"/>
+                      <textarea className="form-control description" placeholder="Description"/>
+                      <button className="form-control button">Commit</button>
+                    </div>
                   </div>
                 </div>
 
@@ -164,7 +170,12 @@ export class CurrentChanges extends React.Component<any, any> {
                         <DiffFiles file={this.state.fileName} comment={false}/>
                       );
                     }
-                    return (<div className="no-diff">No diffs</div>);
+                    return (
+                      <div className="no-diff">
+                        <div className="no-diff-text">
+                          No diffs
+                        </div>
+                      </div>);
                   })()
                 }
 

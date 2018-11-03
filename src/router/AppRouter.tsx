@@ -25,6 +25,7 @@ export const AppRouter: React.StatelessComponent = () => {
       <Switch>
         <Route path="/" exact component={MainRouter} />
         <Route path="/app/settings" exact component={SettingsRouter} />
+        <Route path="/app/settings/:id" exact component={SettingsRouter} />
 
         <Route path="/app/project/:id" exact component={ProjectRouter} />
         <Route path="/app/project/:id/changes" exact component={ProjectRouter} />

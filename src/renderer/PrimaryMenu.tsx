@@ -33,34 +33,37 @@ export class PrimaryMenu extends React.Component<any, any>  {
             <div className="social-projects-cleaner">
               <div className="social-btns">
                 <div className="social-projects ">
-                  <Link className="btn plus" to={`/app/settings/`}>
+                  <Link className="btn settings" to={`/app/settings/`}>
                   <i className="fa fa-cog"></i>
                 </Link>
                 <small className="project-label">Settings</small>
 
               </div>
             </div>
-          </div>
 
-          <div className="social-btns-container projects">
-            <div className="social-btns">
-              <div className="social-projects">
-                {
-                  projects.map((project, i) => {
-                    return (
-                      <div id={'project-id-' + project.id} key={'project-key-' + project.id}
-                        project-path={project.path}>
-                        <Link className="btn plus" to={`/app/project/${project.id}`}>
-                        <i className="fa fa-plus"></i>
-                      </Link>
-                      <small className="project-label">{project.name}</small>
-                    </div>
-                  )
-                })
-              }
+            <div className="social-btns-container projects">
+              <div className="social-btns">
+                <div className="social-projects">
+                  {
+                    projects.map((project, i) => {
+                      return (
+                        <div id={'project-id-' + project.id} key={'project-key-' + project.id}
+                          project-path={project.path}>
+                          <Link className="btn plus" to={`/app/project/${project.id}`}>
+                            <i className="fa fa-plus"></i>
+                          </Link>
+                        <small className="project-label">{project.name}</small>
+                      </div>
+                    )
+                  })
+                }
+              </div>
             </div>
           </div>
+
         </div>
+
+
         <div className="logo">
           {logo}
         </div>

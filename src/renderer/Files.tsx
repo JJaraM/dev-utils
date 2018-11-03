@@ -12,7 +12,6 @@ interface Props {
   files: any;
   event: any;
 }
-
 export class Files extends React.Component<Props, any>  {
 
   constructor(props:Props) {
